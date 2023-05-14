@@ -1,3 +1,0 @@
-/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles/main.dir
-/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles/edit_cache.dir
-/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles/rebuild_cache.dir
