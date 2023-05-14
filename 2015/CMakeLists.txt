@@ -8,6 +8,7 @@ set(SOURCES
     AOC2015.h
     day1.cpp
     day2.cpp
+    day3.cpp
 )
 
 add_executable(main ${SOURCES})
