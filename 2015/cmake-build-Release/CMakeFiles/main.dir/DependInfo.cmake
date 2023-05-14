@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/day1.cpp" "CMakeFiles/main.dir/day1.cpp.o" "gcc" "CMakeFiles/main.dir/day1.cpp.o.d"
-  "/home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day1.cpp" "CMakeFiles/main.dir/day1.cpp.o" "gcc" "CMakeFiles/main.dir/day1.cpp.o.d"
+  "/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day2.cpp" "CMakeFiles/main.dir/day2.cpp.o" "gcc" "CMakeFiles/main.dir/day2.cpp.o.d"
+  "/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

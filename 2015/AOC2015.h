@@ -5,7 +5,7 @@
 
 namespace AOC2015 {
 void day1(std::string_view inputFile);
-
+void day2(std::string_view inputFile);
 }
 
 #endif

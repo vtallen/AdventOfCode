@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/day1.cpp.o"
   "CMakeFiles/main.dir/day1.cpp.o.d"
+  "CMakeFiles/main.dir/day2.cpp.o"
+  "CMakeFiles/main.dir/day2.cpp.o.d"
   "CMakeFiles/main.dir/main.cpp.o"
   "CMakeFiles/main.dir/main.cpp.o.d"
   "main"

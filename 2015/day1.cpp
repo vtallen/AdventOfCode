@@ -9,6 +9,7 @@ void day1(std::string_view inputFile) {
   std::ifstream inputStream{inputFile.data()};
   
   if (!inputStream) {
+    std::cout << "Unable to open: " << inputFile << '\n';
     return;
   }
   

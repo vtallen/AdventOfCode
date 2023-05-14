@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015
+CMAKE_SOURCE_DIR = /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release
+CMAKE_BINARY_DIR = /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -70,46 +70,62 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cpp.o: /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/main.cpp
+CMakeFiles/main.dir/main.cpp.o: /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/day1.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/day1.cpp.o: /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/day1.cpp
+CMakeFiles/main.dir/day1.cpp.o: /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day1.cpp
 CMakeFiles/main.dir/day1.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/day1.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/day1.cpp.o -MF CMakeFiles/main.dir/day1.cpp.o.d -o CMakeFiles/main.dir/day1.cpp.o -c /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/day1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/day1.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/day1.cpp.o -MF CMakeFiles/main.dir/day1.cpp.o.d -o CMakeFiles/main.dir/day1.cpp.o -c /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day1.cpp
 
 CMakeFiles/main.dir/day1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/day1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/day1.cpp > CMakeFiles/main.dir/day1.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day1.cpp > CMakeFiles/main.dir/day1.cpp.i
 
 CMakeFiles/main.dir/day1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/day1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/day1.cpp -o CMakeFiles/main.dir/day1.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day1.cpp -o CMakeFiles/main.dir/day1.cpp.s
+
+CMakeFiles/main.dir/day2.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/day2.cpp.o: /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day2.cpp
+CMakeFiles/main.dir/day2.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/day2.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/day2.cpp.o -MF CMakeFiles/main.dir/day2.cpp.o.d -o CMakeFiles/main.dir/day2.cpp.o -c /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day2.cpp
+
+CMakeFiles/main.dir/day2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/day2.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day2.cpp > CMakeFiles/main.dir/day2.cpp.i
+
+CMakeFiles/main.dir/day2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/day2.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/day2.cpp -o CMakeFiles/main.dir/day2.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/main.cpp.o" \
-"CMakeFiles/main.dir/day1.cpp.o"
+"CMakeFiles/main.dir/day1.cpp.o" \
+"CMakeFiles/main.dir/day2.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/day1.cpp.o
+main: CMakeFiles/main.dir/day2.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +137,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015 /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015 /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015 /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015 /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015
+CMAKE_SOURCE_DIR = /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release
+CMAKE_BINARY_DIR = /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cma
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.26.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vtallen/Nextcloud/Programming/Cpp/AdventOfCode/2015/cmake-build-Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /volumes/External/Nextcloud/Programming/C/AdventOfCode/2015/cmake-build-Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ day1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/day1.cpp.s
 .PHONY : day1.cpp.s
 
+day2.o: day2.cpp.o
+.PHONY : day2.o
+
+# target to build an object file
+day2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/day2.cpp.o
+.PHONY : day2.cpp.o
+
+day2.i: day2.cpp.i
+.PHONY : day2.i
+
+# target to preprocess a source file
+day2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/day2.cpp.i
+.PHONY : day2.cpp.i
+
+day2.s: day2.cpp.s
+.PHONY : day2.s
+
+# target to generate assembly for a file
+day2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/day2.cpp.s
+.PHONY : day2.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... day1.o"
 	@echo "... day1.i"
 	@echo "... day1.s"
+	@echo "... day2.o"
+	@echo "... day2.i"
+	@echo "... day2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
