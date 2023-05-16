@@ -66,7 +66,7 @@ void part1(std::string_view inputFile) {
 
   }
 
-  std::cout << uniqueHousesVisisted << " houses were visisted\n";
+  std::cout << "2015 - Day 3 - Santa visited: " << uniqueHousesVisisted << " houses" << '\n';
 }
 
 void day3(std::string_view inputFile) {
@@ -151,6 +151,6 @@ void day3(std::string_view inputFile) {
     }
   }
 
-  std::cout << uniqueHousesVisisted << " houses were visisted\n";
+  std::cout << "2015 - Day 3 - Santa and Robo-santa visited: " << uniqueHousesVisisted << " houses" << '\n';
 }
 }
