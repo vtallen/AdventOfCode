@@ -66,36 +66,6 @@ void day4(std::string_view inputFile) {
   
   findHash(5, secretKey, false);
   findHash(6, secretKey, false);
-  // stringStream >> secretKey;
-/*
-  int currentNumber{0};
-  bool isHashFound{false};
- 
-  std::string md5Command{"md5 -s "};
-  while (!isHashFound) {
-    std::string command{md5Command + secretKey + std::to_string(currentNumber)}; 
-    // std::string command{md5Command + std::string{"pqrstuv1048970"}};
-    std::string commandResult{exec(command.c_str())};
-    std::size_t delimiterIndex{commandResult.find("=")};
-
-    std::string hash{commandResult.substr(delimiterIndex + 2, commandResult.length())};
-
-    std::string firstFiveCharacters{hash.substr(0, 6)};
-     
-    std::cout << "Hash: " << hash; 
-    std::cout << "First chars: " << firstFiveCharacters << '\n';
-    
-    if (firstFiveCharacters == "000000") {
-      isHashFound = true;
-      break;
-    }
-    ++currentNumber;
-  }
-
-  std::cout << '\n' << currentNumber << '\n';
-
-
-*/
 }
 }
 
