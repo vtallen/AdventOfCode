@@ -8,6 +8,7 @@ void day1(std::string_view inputFile);
 void day2(std::string_view inputFile);
 void day3(std::string_view inputFile);
 void day4(std::string_view inputFile);
+void day5(std::string_view inputFile);
 }
 
 #endif
