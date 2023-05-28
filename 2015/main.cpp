@@ -8,6 +8,7 @@ int main() {
   // AOC2015::day2("inputDay2.txt"); 
 //  AOC2015::day3("inputDay3.txt");
   // AOC2015::day4("inputDay4.txt");
-  AOC2015::day5("inputDay5.txt");
+  // AOC2015::day5("inputDay5.txt");
+  AOC2015::day6("inputDay6.txt");
   return 0;
 }

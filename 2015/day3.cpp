@@ -96,8 +96,8 @@ void day3(std::string_view inputFile) {
   bool isRoboSantaTurn{false};
 
   while (inputStream) {
-    if (isRoboSantaTurn) std::cout << "ROBO\n";
-    else std::cout << "NORMAL\n";
+    // if (isRoboSantaTurn) std::cout << "ROBO\n";
+    // else std::cout << "NORMAL\n";
     char direction{};
     inputStream >> direction;
     
