@@ -32,6 +32,26 @@ void drawRectangle(bool **lightsMatrix, int width, int height, LightAction actio
 
 }
 
+void modifyRectangleBrightness(int **lightsMatrix, int width, int height, LightAction action, int x1, int y1, int x2, int y2) {
+  if ((x1 >= width) || (y1 >= height) || (x2 >= width) || (y2 >= height)) {
+    std::cout << "Tried to draw a rectangle outside the matrix" << '\n';
+    return;
+  }
+  
+  for (int y{y1}; y <= y2; ++y) {
+    for (int x{x1}; x <= x2; ++x) {
+      if (action == LightAction::TURN_ON) {
+        lightsMatrix[y][x] += 1;
+      } else if (action == LightAction::TURN_OFF) {
+        if (lightsMatrix[y][x] != 0) lightsMatrix[y][x] -= 1;
+      } else if (action == LightAction::TOGGLE) {
+        lightsMatrix[y][x] += 2; 
+      }
+    }
+  }
+}
+
+
 void printMatrix(bool **lightsMatrix, int width, int height) {
   for (int y{0}; y < height; ++y) {
     for (int x{0}; x < width; ++x) {
@@ -51,6 +71,16 @@ int numLightsOn(bool **lightsMatrix, int width, int height) {
   return numLights;
 }
 
+int totalBrightness(int **lightsMatrix, int width, int height) {
+  int total{};
+  for (int y{0}; y < height; ++y) {
+    for (int x{0}; x < width; ++x) {
+      total += lightsMatrix[y][x]; 
+    }
+  }
+  return total;
+}
+
 void day6(std::string_view inputFile) {
   std::ifstream inputStream{inputFile};
 
@@ -63,10 +93,17 @@ void day6(std::string_view inputFile) {
   constexpr int rows = 1000;
   constexpr int cols = 1000;
 
-  bool** lights {new bool*[rows]};
+  bool** lights {new bool*[cols]};
+  int** lightsBrightness{new int*[cols]};
 
   for (int i = 0; i < rows; ++i) {
     lights[i] = new bool[cols];
+  }
+  for (int i = 0; i < rows; ++i) {
+    lightsBrightness[i] = new int[cols];
+    for (int j = 0; j < cols; ++j) {
+      lightsBrightness[i][j] = 0;
+    }
   }
   
   while (inputStream) {
@@ -84,6 +121,7 @@ void day6(std::string_view inputFile) {
       std::vector<std::string> orderedPairTwo{AOCHelpers::splitString(splitLine.at(3), ",")};
 
       drawRectangle(lights, 1000, 1000, LightAction::TOGGLE, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
+      modifyRectangleBrightness(lightsBrightness, 1000, 1000, LightAction::TOGGLE, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
 
     } else if (splitLine.size() == 5) {
 
@@ -93,9 +131,11 @@ void day6(std::string_view inputFile) {
 
       if (action == "on") {
         drawRectangle(lights, 1000, 1000, LightAction::TURN_ON, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
+        modifyRectangleBrightness(lightsBrightness, 1000, 1000, LightAction::TURN_ON, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
       }
       else if (action == "off") {
         drawRectangle(lights, 1000, 1000, LightAction::TURN_OFF, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
+        modifyRectangleBrightness(lightsBrightness, 1000, 1000, LightAction::TURN_OFF, std::stoi(orderedPairOne[0]), std::stoi(orderedPairOne[1]), std::stoi(orderedPairTwo[0]), std::stoi(orderedPairTwo[1]));
       }
 
     }
@@ -104,12 +144,17 @@ void day6(std::string_view inputFile) {
   inputStream.close();
 
   std::cout << "2015 - Day 6 - Part 1 - There are " << numLightsOn(lights, 1000, 1000) << " lights turned on\n";
+  std::cout << "2015 - Day 6 - Part 2 - The total brightness is " << totalBrightness(lightsBrightness, 1000, 1000) << '\n'; 
 
 // Deallocate the matrix of lights
   for (int i = 0; i < rows; ++i) {
     delete[] lights[i];
   }
+  for (int i = 0; i < rows; ++i) {
+    delete[] lightsBrightness[i];
+  }
   delete[] lights;
+  delete[] lightsBrightness;
 
 }
 }
