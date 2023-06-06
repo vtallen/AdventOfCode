@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 3.25)
-project(CMakeTemplate)
+project(main)
 
 set(CMAKE_CXX_STANDARD 23)
 
@@ -8,6 +7,8 @@ set(SOURCES
 
     ../AOCHelpers/AOCHelpers.h
     ../AOCHelpers/AOCHelpers.cpp
+    ../AOCHelpers/md5.h
+    ../AOCHelpers/md5.cpp
 
     AOC2015.h
     day1.cpp
@@ -16,6 +17,7 @@ set(SOURCES
     day4.cpp
     day5.cpp
     day6.cpp
+    day7.cpp
 )
 
 add_executable(main ${SOURCES})
