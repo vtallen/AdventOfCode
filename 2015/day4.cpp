@@ -1,71 +1,80 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include <string_view>
 #include <string>
-#include <cstdio>
-#include <memory>
-#include <stdexcept>
-#include <string>
+#include <thread>
+#include <mutex>
 #include <array>
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+#include "../AOCHelpers/md5.h"
+
 namespace AOC2015 {
 
-// This function was found at https://stackoverflow.com/questions/478898/how-do-i-execute-a-command-and-get-the-output-of-the-command-within-c-using-po
-std::string exec(const char* cmd) {
-    std::array<char, 128> buffer;
-    std::string result;
-    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
-    if (!pipe) {
-        throw std::runtime_error("popen() failed!");
-    }
-    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
-        result += buffer.data();
-    }
-    return result;
-}
+std::string secretKey{};
 
-void findHash(const int numZeros, std::string &secretKey, bool verbose) {
-  std::cout << "Finding hashes for " << secretKey << " that start with " << numZeros << " zeros\n";
-  int currentNumber{0};
-  bool isHashFound{false};
- 
-  std::string md5Command{"md5 -s "};
+std::mutex g_lock;
+long result{};
+bool isHashFound{false};
+int numZeros{5};
+
+void findHash(int startNum) {
+  long currentNum{startNum};
+  
+  static std::string md5Command{"md5 -s "};
   std::string zeros(numZeros, '0');
 
-  while (true) {
-    std::string command{md5Command + secretKey + std::to_string(currentNumber)}; 
+  while (!isHashFound) {
+    std::string hash{md5(secretKey + std::to_string(currentNum))};
+    std::string firstChars{hash.substr(0, numZeros)};
     
-    std::string commandResult{exec(command.c_str())};
-    std::size_t delimiterIndex{commandResult.find("=")};
-
-    std::string hash{commandResult.substr(delimiterIndex + 2, commandResult.length())};
-
-    std::string firstCharacters{hash.substr(0, numZeros)};
-    
-    if (verbose) {
-      std::cout << "Hash: " << hash; 
-      std::cout << "First chars: " << firstCharacters << '\n';
-    } 
-    if (firstCharacters == zeros) {
-      break;
+    // std::cout << std::this_thread::get_id() << " " << hash << '\n'; 
+    if (firstChars == zeros) {
+      g_lock.lock();
+      isHashFound = true;
+      result = currentNum;
+      g_lock.unlock();
     }
-    ++currentNumber;
+    ++currentNum;
   }
-  std::cout << "2015 - Day 4 - The first number that combines with the secret key to get " << numZeros << " zeros is "<< currentNumber << '\n'; 
 }
 
 void day4(std::string_view inputFile) {
   std::ifstream inputStream{inputFile};
 
   if (!inputStream) {
-    std::cout << "Unable to open file: " << inputFile << '\n';
+    std::cout << "Unable to open " << inputFile << '\n';
   }
   
-  std::string secretKey{};
   std::getline(inputStream, secretKey);
-  
-  findHash(5, secretKey, false);
-  findHash(6, secretKey, false);
-}
-}
 
+  std::vector<std::thread> threads;
+
+  for (int i{0}; i < 60; ++i) {
+    threads.push_back(std::thread(&findHash, i * 10000));
+  }
+  for (auto &thread : threads) {
+    thread.join();
+  }
+  
+  long part1Result{result};
+
+  // Reset our global variables to solve part 2
+  isHashFound = false;
+  result = 0;
+  numZeros = 6;
+  threads.clear();
+
+  for (int i{0}; i < 100; ++i) {
+    threads.push_back(std::thread(&findHash, i * 100'000));  
+  }
+  for (auto &thread : threads) {
+    thread.join();
+  }
+
+  long part2Result{result};
+
+  std::cout << "2015 - Day 4 - Part 1: The number resulting in a hash starting with 00000 is: " << part1Result << '\n';
+  std::cout << "2015 - Day 4 - Part 2: The number resulting in a hash starting with 000000 is: " << part2Result << '\n';
+}
+}
