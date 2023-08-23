@@ -82,7 +82,7 @@ int totalBrightness(int **lightsMatrix, int width, int height) {
 }
 
 void day6(std::string_view inputFile) {
-  std::ifstream inputStream{inputFile};
+  std::ifstream inputStream{inputFile.data()};
 
   if (!inputStream) {
     std::cout << "Unable to open file: " << inputFile << '\n';

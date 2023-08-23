@@ -7,7 +7,7 @@
 
 namespace AOC2015 {
 void part1(std::string_view inputFile) {
-  std::ifstream inputStream{inputFile};
+  std::ifstream inputStream{inputFile.data()};
 
   if (!inputStream) {
     std::cout << "Unable to open file: " << inputFile << '\n';
@@ -71,7 +71,7 @@ void part1(std::string_view inputFile) {
 
 void day3(std::string_view inputFile) {
   part1(inputFile);
-  std::ifstream inputStream{inputFile};
+  std::ifstream inputStream{inputFile.data()};
 
   if (!inputStream) {
     std::cout << "Unable to open file: " << inputFile << '\n';

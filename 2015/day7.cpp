@@ -65,7 +65,7 @@ void day7(std::string_view inputFile) {
   // Checks if a wire needs connected to another wire
   const std::regex WIRE_TO_WIRE{R"((\w+)\s->\s(\w+))"};
 
-  std::ifstream inputStream{inputFile};
+  std::ifstream inputStream{inputFile.data()};
 
   if (!inputStream) {
     std::cout << "Unable to open file: " << inputFile << '\n';

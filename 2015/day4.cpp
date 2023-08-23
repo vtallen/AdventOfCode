@@ -40,7 +40,7 @@ void findHash(int startNum) {
 }
 
 void day4(std::string_view inputFile) {
-  std::ifstream inputStream{inputFile};
+  std::ifstream inputStream{inputFile.data()};
 
   if (!inputStream) {
     std::cout << "Unable to open " << inputFile << '\n';
